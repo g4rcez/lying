@@ -29,5 +29,5 @@ test("Get Result with Promises", async () => {
 		packageJson: readFilePromise("./package.json"),
 	});
 	const json = JSON.parse(promises.packageJson.toString());
-	expect(json.name).toBe("oath");
+	expect(json.name).toBe("pact");
 });
