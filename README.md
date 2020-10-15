@@ -1,4 +1,4 @@
-# pact
+# lying
 
 Use Promise.all and Promise.settled as typed objects
 
@@ -6,7 +6,7 @@ Use Promise.all and Promise.settled as typed objects
 ### Example
 
 ```typescript
-import Pact from "pact";
+import lying from "lying";
 
 const promises = await All({
 	  octocat: fetch("http://api.github.com/users/octocat"),

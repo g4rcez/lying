@@ -14,7 +14,7 @@ type PromiseInput<T> = {
   [k in keyof T]: Promise<T[k]> | T[k];
 };
 
-export const PromiseAll = async <T,>(promiseObject: PromiseInput<T>): Promise<Promises<T>> => {
+export const promiseAll = async <T,>(promiseObject: PromiseInput<T>): Promise<Promises<T>> => {
   const promises = Object.values(promiseObject);
   const resolved = await Promise.all(promises);
   return Object.keys(promiseObject).reduce(
@@ -26,7 +26,7 @@ export const PromiseAll = async <T,>(promiseObject: PromiseInput<T>): Promise<Pr
   );
 };
 
-export const PromiseSettled = async <T,>(promiseObject: PromiseInput<T>): Promise<PromisesSettled<T>> => {
+export const promiseSettled = async <T,>(promiseObject: PromiseInput<T>): Promise<PromisesSettled<T>> => {
   const promises = Object.values(promiseObject);
   const resolved = await Promise.allSettled(promises);
   return Object.keys(promiseObject).reduce((acc, el, i): PromisesSettled<T> => {
@@ -45,4 +45,4 @@ export const PromiseSettled = async <T,>(promiseObject: PromiseInput<T>): Promis
   }, {} as PromisesSettled<T>);
 };
 
-export default { all: PromiseAll, settled: PromiseSettled };
+export default { all: promiseAll, settled: promiseSettled };

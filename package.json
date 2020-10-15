@@ -1,5 +1,5 @@
 {
-  "name": "pact",
+  "name": "lying",
   "version": "1.0.0",
   "description": "Use Promise.all and Promise.settled as typed objects",
   "main": "./build/index.js",
