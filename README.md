@@ -8,7 +8,7 @@ Use Promise.all and Promise.settled as typed objects
 ```typescript
 import lying from "lying";
 
-const promises = await All({
+const promises = await lying.all({
 	  octocat: fetch("http://api.github.com/users/octocat"),
 	  octocatJson: fetch("http://api.github.com/users/octocat").then(e => e.json()),
 });
